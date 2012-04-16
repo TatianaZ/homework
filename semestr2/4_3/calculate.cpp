@@ -21,6 +21,12 @@ void Calculate::operation(int op){
         mode = 1;
         return;
     }
+    if (firstTime == 1)
+    {
+        value1 = value2;
+        value2 = 0;
+        firstTime = 0;
+    }
     if (op == 4)
     {
         switch (operat)
@@ -42,13 +48,28 @@ void Calculate::operation(int op){
         emit rezult(temp.setNum(value1, 'f', 5));
 
     }
-
-   if (firstTime == 1)
+    else
     {
-        value1 = value2;
+        switch (operat)
+        {
+            case 0:
+                value1 += value2;
+                break;
+            case 1:
+                value1 -= value2;
+                break;
+            case 2:
+                value1 *= value2;
+                break;
+            case 3:
+                value1 /= value2;
+                break;
+        }
         value2 = 0;
-        firstTime = 0;
+        emit rezult(temp.setNum(value1, 'f', 5));
     }
+
+
     operat = op;
     decimal = 0;
 }
