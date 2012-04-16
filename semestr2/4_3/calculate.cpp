@@ -48,7 +48,7 @@ void Calculate::operation(int op){
         emit rezult(temp.setNum(value1, 'f', 5));
 
     }
-    else
+    else  // пересчет
     {
         switch (operat)
         {
