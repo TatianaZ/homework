@@ -1,10 +1,8 @@
 #include "doublylinkedlist.h"
 
-DoublyLinkedList::DoublyLinkedList()
+DoublyLinkedList::DoublyLinkedList():next(NULL), prev(NULL)
 {
     value = 0;
-    next = NULL;
-    prev = NULL;
 }
 DoublyLinkedList::DoublyLinkedList(int newValue)
 {
@@ -111,4 +109,8 @@ void DoublyLinkedList::deleteAll()
         delete temp2;
     }
     this->next = NULL;
+}
+int DoublyLinkedList::getValue()
+{
+    return next->value;
 }

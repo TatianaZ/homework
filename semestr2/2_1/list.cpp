@@ -1,9 +1,8 @@
 #include "list.h"
 
-List::List()
+List::List(): next(NULL)
 {
     value = 0;
-    next = NULL;
 }
 
 List::List(int newValue)
@@ -100,4 +99,8 @@ void List::deleteAll()
         delete temp2;
     }
     this->next = NULL;
+}
+int List::getValue()
+{
+    return next->value;
 }

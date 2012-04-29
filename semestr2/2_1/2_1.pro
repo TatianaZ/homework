@@ -11,16 +11,18 @@ QT       -= gui
 TARGET = 2_1
 CONFIG   += console
 CONFIG   -= app_bundle
+CONFIG += qtestlib
 
 TEMPLATE = app
 
 
 SOURCES += main.cpp \
     list.cpp \
-    doublylinkedlist.cpp \
-    base.cpp
+    doublylinkedlist.cpp
 
 HEADERS += \
     list.h \
     doublylinkedlist.h \
-    base.h
+    base.h \
+    testlist.h \
+    testdoublelist.h
