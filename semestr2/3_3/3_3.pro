@@ -11,6 +11,7 @@ QT       -= gui
 TARGET = 3_3
 CONFIG   += console
 CONFIG   -= app_bundle
+CONFIG += qtestlib
 
 TEMPLATE = app
 
@@ -19,4 +20,5 @@ SOURCES += main.cpp \
     sortmas.cpp
 
 HEADERS += \
-    sortmas.h
+    sortmas.h \
+    testsorting.h

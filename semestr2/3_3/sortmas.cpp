@@ -20,7 +20,6 @@ void SortMas::sort(int *mas, int rows, int cols)
                     *(mas + col + k * cols) = temp;
                 }
             }
-
         }
     }
 }

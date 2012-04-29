@@ -1,10 +1,10 @@
 #include <iostream>
 #include "sortmas.h"
-
+#include "testsorting.h"
 using namespace std;
 int  main()
 {
-    int mas[6][5] = {
+    /*int mas[6][5] = {
         {40, 41, 42, 43, 44},
         {30, 31, 32, 33, 34},
         {20, 21, 22, 23, 24},
@@ -24,5 +24,7 @@ int  main()
         }
         cout << "\n";
     }
-    return 0;
+    return 0;*/
+    TestSorting testsorting;
+    QTest::qExec(&testsorting);
 }
