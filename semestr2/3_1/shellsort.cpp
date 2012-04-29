@@ -5,10 +5,10 @@ ShellSort::ShellSort()
 }
 void ShellSort::sort(int *mas, int size)
 {
-   long d = size - 1;
-   while (d > 0)
+   long distance = size - 1;
+   while (distance > 0)
    {
-       for(int j = 1; j < size; j += D)
+       for(int j = 1; j < size; j += distance)
        {
            for(int i = 0; i < size - j; i++)
            {
@@ -20,6 +20,6 @@ void ShellSort::sort(int *mas, int size)
                }
            }
        }
-       d = (d - 1)*0.5;
+       distance = (distance - 1)*0.5;
    }
 }

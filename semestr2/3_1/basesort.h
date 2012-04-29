@@ -1,12 +1,15 @@
-#ifndef BASESORT_H
-#define BASESORT_H
-
+#pragma once
+/**
+  класс реализующий интерфейс сортировщика
+  */
 class BaseSort
 {
 public:
-    BaseSort();
-
+    /**
+      @brief функция, реализующая сортировку
+      @param *mas указатель на массив, в котором нужно
+      провести сортировку
+      size размер массива
+      */
     virtual void sort(int *mas, int size) = 0;
 };
-
-#endif // BASESORT_H
