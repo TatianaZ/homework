@@ -1,24 +1,43 @@
-#ifndef CALCULATE_H
-#define CALCULATE_H
+#pragma once
 #include <QObject>
 #include <QString>
+/**
+  @brief класс, в который обрабатывает действия в калькуляторе
+  @param
+    value1  значение
+    value2 новое число
+    operat действие над числами
+    mode режим ввода числа {целая/десятичная часть}
+    decimal  количество знаков после заптятой при вводе
+    firstTime  флажок первого ввода числа
+  */
 class Calculate : public QObject
 {
     Q_OBJECT
 public:
     Calculate();
 public slots:
-    void operation(int op);         // действия
-    void getValue(int valueNew);    //ввод числа
+    /**
+      @brief функция, в которой совершаются действия над числами
+      @param op нажатая операция
+      */
+    void operation(int op);
+    /**
+      @brief функция, которая обрабатывет нажатые клавиши с числами
+      @param valueNew нажатая кнопка с числом
+      */
+    void getValue(int valueNew);
 signals:
-    void rezult(QString);   //результат
+    /**
+      сигнал, который должен посылать результат
+      в нужный слот
+      */
+    void rezult(QString);
 private:
-    double value1;  // значение
-    double value2;  // новое число
-    int operat;     // действие над числами
-    int mode;       // режим ввода числа {целая/десятичная часть}
-    int decimal;         // количество знаков после заптятой при вводе
-    bool firstTime; // флажок первого ввода числа
+    double value1;
+    double value2;
+    int operat;
+    int mode;
+    int decimal;
+    bool firstTime;
 };
-
-#endif // CALCULATE_H

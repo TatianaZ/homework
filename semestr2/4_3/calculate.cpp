@@ -48,7 +48,7 @@ void Calculate::operation(int op){
         emit rezult(temp.setNum(value1, 'f', 5));
 
     }
-    else  // пересчет
+    else  // пересчет при нажатии операции
     {
         switch (operat)
         {
@@ -68,8 +68,6 @@ void Calculate::operation(int op){
         value2 = 0;
         emit rezult(temp.setNum(value1, 'f', 5));
     }
-
-
     operat = op;
     decimal = 0;
 }
