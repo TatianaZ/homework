@@ -1,8 +1,7 @@
 #include "display.h"
 
-Display::Display()
+Display::Display():mas(NULL)
 {
-    mas = NULL;
     n = 0;
 }
 Display::~Display()
