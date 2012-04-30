@@ -1,15 +1,26 @@
+QT       += core
+
+QT       -= gui
+
+TARGET = 2_2
+CONFIG   += console
+CONFIG   -= app_bundle
+CONFIG += qtestlib
+
 TEMPLATE = app
-CONFIG += console
-CONFIG -= qt
 
 SOURCES += main.cpp \
-    masstack.cpp \
     linkedstack.cpp \
-    calcul.cpp
+    arraystack.cpp \
+    calculate.cpp
 
 HEADERS += \
     basestack.h \
-    masstack.h \
     linkedstack.h \
-    calcul.h
+    arraystack.h \
+    calculate.h \
+    testarraystack.h \
+    testlinkedstack.h \
+    testcalculate.h
+
 

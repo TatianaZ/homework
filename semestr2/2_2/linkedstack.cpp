@@ -26,7 +26,7 @@ int LinkedStack::pop()
     if (next == NULL)
     {
         cout << " Empty ";
-        return 0;
+        return INT_MIN;
     }
     int temp;
     LinkedStack *tempLink;
@@ -54,13 +54,11 @@ void LinkedStack::showAll()
         cout << "Empty\n";
         return;
     }
-
     while (temp != NULL)
     {
         cout << temp->value << " ";
         temp = temp->next;
     }
-
     cout << "\n";
 }
 bool LinkedStack::checkSize()

@@ -1,20 +1,15 @@
-#include "calcul.h"
-
+#include "calculate.h"
+#include "testarraystack.h"
+#include "testlinkedstack.h"
+#include "testcalculate.h"
 int main()
 {
-    BaseStack *stack1;
-    BaseStack *stack2;
-    Calcul newCalcul;
+    TestArrayStack testArrayStack;
+    TestLinkedStack testLinkedStack;
+    TestCalculate testCalculate;
 
-    char a[] = "1 1 2 + 5 * +"; // 1 + (1 + 2) * 5 = 16
-    stack1 = new MasStack();
-    stack2 = new LinkedStack();
-
-    cout << newCalcul.queueCalcul(stack1, a, 14) << "\n";
-    cout << newCalcul.queueCalcul(stack2, a, 14) << "\n";
-
-    delete stack1;
-    delete stack2;
-    return 0;
+    QTest::qExec(&testArrayStack);
+    QTest::qExec(&testLinkedStack);
+    QTest::qExec(&testCalculate);
 }
 

@@ -1,30 +1,39 @@
 #pragma once
-#include <iostream>
-using namespace std;
+#include "basestack.h"
+#include <limits.h>
 /**
-  @brief базовый класс
+  @brief стек, реализованный массивом
+  @param size размер стека
+  stack стек
   */
-class BaseStack
+class ArrayStack : public BaseStack
 {
 public:
+    /**
+      @brief конструктор
+      */
+    ArrayStack();
     /**
       @brief функци€, добавл€юща€ в стек элемент
       @param newData элемент, который добавл€етс€ в стек
       */
-    virtual void push(int newData) = 0;
+    void push(int newData);
     /**
       @brief функци€, котора€ достает из стека элемент
       @return элемент, последний добавленный в стек
       */
-    virtual int pop() = 0;
+    int pop();
     /**
       @brief функци€, вывод€ща€ на экран содержимое стека
       */
-    virtual void showAll() = 0;
+    void showAll();
     /**
       @brief функци€ провер€юща€ пустой ли стек
       @return 1 не пустой
       0 пустой
       */
-    virtual bool checkSize() = 0;
+    bool checkSize();
+private:
+    int stack[100];
+    int size;
 };
