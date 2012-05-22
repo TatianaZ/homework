@@ -78,20 +78,21 @@ public:
       */
     void uniteSet(Set *newSet)
     {
-        Set *temp = this->next;
-
-        while (temp->next != NULL)
+        while (newSet != NULL)
         {
-            temp = temp->next;
+            if (!ownershipSet(newSet->element))
+            {
+                add(newSet->element);
+            }
+            newSet = newSet->next;
         }
-        temp->next = newSet;
     }
     /**
       @brief функци€, осуществл€юща€ пересечекние множеств
       @param anotherSet множество, с которым пересекаетс€
       */
     void crossingSet(Set *anotherSet)
-    {
+   {
         Set *temp = this->next;
         while (temp != NULL)
         {
@@ -144,10 +145,11 @@ bool Set<T>::ownershipSet(T elementSearch)
     }
     return 0;
 }
-/*template <typename T>
+/*
+template <typename T>
 void Set<T>::crossingSet(Set<T> *anotherSet)
 {
-    Set *temp = this->next;
+    Set<T> *temp = this->next;
     while (temp != NULL)
     {
         if (!anotherSet->ownershipSet(temp->element))
@@ -155,4 +157,5 @@ void Set<T>::crossingSet(Set<T> *anotherSet)
             deleteElement(temp->element);
         }
         temp = temp->next;
-}*/
+}
+*/
