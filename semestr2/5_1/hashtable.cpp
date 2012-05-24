@@ -67,7 +67,7 @@ void HashTable::setNewHashFunction(HashFunction *funHash)
     {
         return;
     }
-    int capacityNew = capacity / (capacity / size);
+    int capacityNew = capacity / 0.5;
     rehash(capacityNew);
 }
 
