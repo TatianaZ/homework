@@ -1,0 +1,44 @@
+#pragma once
+#include <QtCore/QObject>
+#include <QtTest/QtTest>
+
+#include "doublylinkedlist.h"
+
+class TestList : public QObject
+{
+    Q_OBJECT
+public:
+    explicit TestList(QObject *parent = 0):QObject(parent){}
+    
+private slots:
+    void init()
+    {
+        listLinked = new List();
+    }
+    void cleanup()
+    {
+        delete listLinked;
+    }
+    void testAddToLinkedList()
+    {
+        listLinked->add(2);
+        QVERIFY(listLinked->getValue() == 2);
+    }
+    void testDeleteFromLinkedList()
+    {
+        listLinked->add(1);
+        listLinked->add(2);
+        listLinked->add(3);
+        listLinked->add(4);
+        listLinked->add(5);
+        listLinked->add(6);
+        listLinked->deleteFromList(6);
+        listLinked->deleteFromList(3);
+        listLinked->deleteFromList(1);
+        QVERIFY(listLinked->search(2));
+        QVERIFY(listLinked->search(4));
+        QVERIFY(listLinked->search(5));
+    }
+private:
+    Base *listLinked;
+};
